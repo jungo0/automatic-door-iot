@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <center><a href="/">홈페이지</a><br><br><br>
+    <title>Door Open</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='font.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+        <center>
+            <p><font size ="8"><h2>Door Open</h2></font>
+        <center>
+        </div>
+        <div class="main">
+            <div>
+                <button class="btn-5", onclick="door_open()">Open</button>
+            </div>
+            <div>
+                <button class="btn-5", onclick="buz1_on()">Close</button>
+            </div>
+        </div>
+        <div id="result">
+        </div>
+    </div>
+    
+    <script>
+    var a= new Date();
+        document.write(a.toLocaleString()+"<br>");
+        function showClock(){
+            var s =new Date();
+            var e= document.getElementById('kk');
+            e.value=s.toLocaleString();
+
+            setTimeout('showClock()', 1000);
+        }
+    </script>
+ 
+</head>
+<body>
+    <hr>
+    <p><font size ="5"><h4>현재시각</h4></font>
+    <button  onclick="showClock()">show clock</button>
+    <input type="text" id="kk" size="30">
+
+</body>
+</html>
+    <script>
+        function door_open(){
+            fetch("/door/open")
+            var a = new DATE();
+            document.write(a+"<br>");
+        }
+        function buz1_on(){
+            fetch("/buz1/on")
+        }
+    </script>
+</body>
+</html>
+
+
+
